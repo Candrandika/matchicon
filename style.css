@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+    --col-lightest: #F2EFE5;
+    --col-darkest: #B4B4B8;
+    --col-close: #C7C8CC;
+    --col-open: #E3E1D9;
+    --col-match: rgb(255, 205, 3);
+    --col-text: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--col-lightest);
+}
+
+header {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+#option-box {
+    display: flex;
+    justify-content: center;
+}
+#option-box > * {
+    padding: 8px 20px;
+    border: 0;
+    outline: 0;
+    background-color: var(--col-close);
+}
+#option-box > *:hover, #option-box > *:active {
+    background-color: var(--col-darkest);
+}
+#level {
+    border-radius: 5px 0px 0px 5px;
+    appearance: none;
+    border-right: 1px solid var(--col-darkest);
+}
+#restart {
+    border-left: 1px solid var(--col-darkest);
+    border-radius: 0px 5px 5px 0px;
+}
+
+#timer {
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+    width: max(300px, min(400px, 100vmin));
+    height: max(300px, min(400px, 100vmin));
+    padding: 10px;
+}
+
+#board {
+    border-radius: 5px;
+    background-color: var(--col-darkest);
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card {
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--col-close);
+    cursor: pointer;
+    transition: all .3s;
+    transform: rotateY(0deg);
+    display: grid;
+    place-items: center;
+    user-select: none;
+}
+.card.open {
+    background-color: var(--col-open);
+}
+.card.match {
+    background-color: var(--col-match);
+}
+footer {
+    position: absolute;
+    background-color: rgb(12, 0, 65);
+    padding: 10px 18.5px;
+    right: 0px;
+    bottom: 0px;
+    border-top-left-radius: 10px;
+}
+footer > * {
+    font-size: 2rem;
+    color: white;
+}
